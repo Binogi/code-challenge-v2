@@ -32,3 +32,6 @@ The assignment is to add a column named `nickname` (via a migration) to the data
 - The OpenAPI Swagger documentation can be generated on demand by running `./vendor/bin/sail artisan l5-swagger:generate` in the root directory of the project
   - This documentation can be viewed by navigating to [http://localhost/api/documentation](http://localhost/api/documentation)
 - Don't worry about authentication
+- Tests can be run by running the following commands:
+  - `docker exec -it code-challenge-laravel.test-1 bash` (connecting to the Docker container)
+  - `./vendor/bin/phpunit` (run the tests)

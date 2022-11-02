@@ -11,7 +11,6 @@ use Illuminate\Database\Eloquent\Collection;
  * @method User create(array $data)
  * @method User update(array $data, int $id, string $attribute = "id")
  * @method int delete(int $id)
- * @method bool exists(array $ids)
  * @method User find(int $id, array $columns = ['*'])
  */
 class UserRepository extends Repository

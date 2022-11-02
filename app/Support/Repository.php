@@ -89,6 +89,17 @@ abstract class Repository
         return $this->getModel()->create($data);
     }
 
+    /**
+     * @param array  $data
+     * @param int    $id
+     * @param string $attribute
+     *
+     * @return Model|Eloquent
+     */
+    public function update(array $data, int|string $id, string $attribute = "id")
+    {
+        return $this->model->where($attribute, '=', $id)->update($data);
+    }
 
     /**
      * @param int $id
@@ -132,34 +143,6 @@ abstract class Repository
     public function first(array $columns = ['*'])
     {
         return $this->getModel()->first($columns);
-    }
-
-
-    /**
-     * @return Model|Eloquent
-     */
-    public function newest()
-    {
-        return $this->getModel()->latest()->first();
-    }
-
-
-    public function findByIds(array $ids)
-    {
-        return $this->getModel()->whereIn('id', $ids)->get();
-    }
-
-
-    /**
-     * @param string $attribute
-     * @param mixed  $value
-     * @param array  $columns
-     *
-     * @return Model|Eloquent
-     */
-    public function findBy(string $attribute, $value, array $columns = ['*'])
-    {
-        return $this->getModel()->where($attribute, '=', $value)->first($columns);
     }
 
 

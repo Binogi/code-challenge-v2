@@ -67,7 +67,7 @@
                                             <li>The POST request and the PUT request need to be able to change the value of the column asserting the following validation rules:
                                                 <ul>
                                                     <li>A valid nickname must be unique among users</li>
-                                                    <li>A valid nickname must be shorter than 30 characters</li>
+                                                    <li>A valid nickname must be a string shorter than 30 characters</li>
                                                 </ul>
                                             </li>
                                             <li>Documentation should be updated so Swagger can be generated and used to smoke test
@@ -87,6 +87,12 @@
                                                 </ul>
                                             </li>
                                             <li>Don't worry about authentication</li>
+                                            <li>Tests can be run by running the following commands:
+                                                <ul>
+                                                    <li><code>docker exec -it code-challenge-laravel.test-1 bash</code> (connecting to the Docker container)</li>
+                                                    <li><code>./vendor/bin/phpunit</code> (run the tests)</li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
