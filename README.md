@@ -12,8 +12,8 @@ The task is split into three sub-categories and shouldn't take longer than 2-4 h
 This repository has been set up for you to start right away. We are using [Laravel Sail](https://laravel.com/docs/9.x/sail) to ensure that
 this code challenge can be run locally on your machine, regardless of your installed system environment.
 - The project can be brought up and running by running the following commands from the root directory of the project: 
+  - `composer install`
   - `./vendor/bin/sail up`
-  - `./vendor/bin/sail composer install`
   - `./vendor/bin/sail artisan migrate:fresh --seed`
   - `./vendor/bin/sail artisan l5-swagger:generate`
 

@@ -49,8 +49,8 @@
                                         <ul>
                                             <li>The project can be brought up and running by running the following commands from the root directory of the project:
                                                 <ul>
+                                                    <li><code>composer install</code></li>
                                                     <li><code>./vendor/bin/sail up</code></li>
-                                                    <li><code>./vendor/bin/sail composer install</code></li>
                                                     <li><code>./vendor/bin/sail artisan migrate:fresh --seed</code></li>
                                                     <li><code>./vendor/bin/sail artisan l5-swagger:generate</code></li>
                                                 </ul>
