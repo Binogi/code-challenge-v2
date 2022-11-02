@@ -29,9 +29,9 @@ class UserMapperTest extends FrameworkTest
         $result = $this->userMapper->single($user);
         $this->assertEquals(
             [
-                'id'       => $user->id,
-                'name'     => $user->name,
-                'email'    => $user->email,
+                'id'    => $user->id,
+                'name'  => $user->name,
+                'email' => $user->email,
             ],
             $result
         );
