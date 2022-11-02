@@ -66,7 +66,8 @@ class UserController extends Controller
      *     ),
      *     @OA\Response(
      *         response=200,
-     *         description="successful operation",
+     *         description="User created",
+     *         @OA\JsonContent(ref="#/components/schemas/UserMapper"),
      *     ),
      *     @OA\Response(response=400, description="User cannot be created"),
      *     @OA\Response(response=422, description="Failed validation of given params"),

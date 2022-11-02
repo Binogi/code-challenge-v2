@@ -34,13 +34,6 @@ class UserMapper extends Mapper
      *         description="name",
      *         example="Jane Doe",
      *     ),
-     *     @OA\Property(
-     *         property="password",
-     *         type="string",
-     *         minLength=6,
-     *         description="password, at least 6 characters",
-     *         example="correct horse battery staple",
-     *     ),
      * ),
      *
      * @param User|Model $user

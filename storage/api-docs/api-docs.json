@@ -113,7 +113,14 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "successful operation"
+                        "description": "User created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserMapper"
+                                }
+                            }
+                        }
                     },
                     "400": {
                         "description": "User cannot be created"
@@ -144,12 +151,6 @@
                         "description": "name",
                         "type": "string",
                         "example": "Jane Doe"
-                    },
-                    "password": {
-                        "description": "password, at least 6 characters",
-                        "type": "string",
-                        "minLength": 6,
-                        "example": "correct horse battery staple"
                     }
                 },
                 "type": "object"
