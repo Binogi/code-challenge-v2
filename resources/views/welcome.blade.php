@@ -39,20 +39,20 @@
                                         <ol>
                                             <li>This challenge requires Docker to be installed on your system. The easiest way to accomplish this is to <a target="_blank" href="https://www.docker.com/">install Docker Desktop</a>.</li>
                                             <li>You should focus on code quality and structure. If possible and timely reasonable, also add tests.</li>
-                                            <li>Wherever possible and reasonable, try to follow the <a target="_blank" href="https://en.wikipedia.org/wiki/SOLID">SOLID principles</a>.</li>
+                                            <li>Wherever possible, try to follow the <a target="_blank" href="https://en.wikipedia.org/wiki/SOLID">SOLID principles</a>.</li>
                                         </ol>
                                     </div>
                                     <div class="info-block">
                                         <h3>Setup</h3>
-                                        <p>This repository has been set up for you to start right away. We are using <a target="_blank" href="https://laravel.com/docs/9.x/sail">Laravel Sail</a> to ensure that
+                                        <p>This repository has been set up for you to start right away. We are using Docker to ensure that
                                             this code challenge can be run locally on your machine, regardless of your installed system environment.</p>
                                         <ul>
                                             <li>The project can be brought up and running by running the following commands from the root directory of the project:
                                                 <ul>
-                                                    <li><code>composer install</code></li>
-                                                    <li><code>./vendor/bin/sail up</code></li>
-                                                    <li><code>./vendor/bin/sail artisan migrate:fresh --seed</code></li>
-                                                    <li><code>./vendor/bin/sail artisan l5-swagger:generate</code></li>
+                                                    <li><code>docker-compose up --remove-orphans</code></li>
+                                                    <li><code>docker-compose run --rm php composer install</code></li>
+                                                    <li><code>docker-compose run --rm php /var/www/artisan migrate:fresh --seed</code></li>
+                                                    <li><code>docker-compose run --rm php /var/www/artisan l5-swagger:generate</code></li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -81,16 +81,16 @@
                                     <div class="info-block">
                                         <h3>Hints</h3>
                                         <ul>
-                                            <li>The OpenAPI Swagger documentation can be generated on demand by running <code>./vendor/bin/sail artisan l5-swagger:generate</code> in the root directory of the project
+                                            <li>The OpenAPI Swagger documentation can be generated on demand by running <code>docker-compose run --rm php /var/www/artisan l5-swagger:generate</code> in the root directory of the project
                                                 <ul>
-                                                    <li>This documentation can be viewed by navigating to <a target="_blank" href="http://localhost/api/documentation">http://localhost/api/documentation</a></li>
+                                                    <li>This documentation can be viewed by navigating to <a target="_blank" href="http://localhost:7777/api/documentation">http://localhost:7777/api/documentation</a></li>
                                                 </ul>
                                             </li>
                                             <li>Don't worry about authentication</li>
                                             <li>Tests can be run by running the following commands:
                                                 <ul>
-                                                    <li><code>docker exec -it code-challenge-laravel.test-1 bash</code> (connecting to the Docker container)</li>
-                                                    <li><code>./vendor/bin/phpunit</code> (run the tests)</li>
+                                                    <li><code>docker exec -it mysql bash -c "mysql -u root -ppassword -e \"DROP DATABASE IF EXISTS testing; CREATE DATABASE testing\""</code> Creates the test DB </li>
+                                                    <li><code>docker-compose run --rm php php /var/www/artisan test</code> (run the tests)</li>
                                                 </ul>
                                             </li>
                                         </ul>
