@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="info-block">
                                         <h3>Setup</h3>
-                                        <p>This repository has been set up for you to start right away. We are using <a target="_blank" href="https://laravel.com/docs/9.x/sail">Laravel Sail</a> to ensure that
+                                        <p>This repository has been set up for you to start right away. We are using Docker to ensure that
                                             this code challenge can be run locally on your machine, regardless of your installed system environment.</p>
                                         <ul>
                                             <li>The project can be brought up and running by running the following commands from the root directory of the project:
@@ -81,7 +81,7 @@
                                     <div class="info-block">
                                         <h3>Hints</h3>
                                         <ul>
-                                            <li>The OpenAPI Swagger documentation can be generated on demand by running <code>./vendor/bin/sail artisan l5-swagger:generate</code> in the root directory of the project
+                                            <li>The OpenAPI Swagger documentation can be generated on demand by running <code>docker-compose run --rm php /var/www/artisan l5-swagger:generate</code> in the root directory of the project
                                                 <ul>
                                                     <li>This documentation can be viewed by navigating to <a target="_blank" href="http://localhost:7777/api/documentation">http://localhost:7777/api/documentation</a></li>
                                                 </ul>

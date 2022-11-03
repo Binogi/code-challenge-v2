@@ -29,7 +29,7 @@ The assignment is to add a column named `nickname` (via a migration) to the data
    - We are using the open-source package [L5-Swagger](https://github.com/DarkaOnLine/L5-Swagger) to generate OpenAPI Swagger  
 
 ### Hints
-- The OpenAPI Swagger documentation can be generated on demand by running `./vendor/bin/sail artisan l5-swagger:generate` in the root directory of the project
+- The OpenAPI Swagger documentation can be generated on demand by running `docker-compose run --rm php /var/www/artisan l5-swagger:generate` in the root directory of the project
   - This documentation can be viewed by navigating to [http://localhost:7777/api/documentation](http://localhost:7777/api/documentation)
 - Don't worry about authentication
 - Tests can be run by running the following commands:
