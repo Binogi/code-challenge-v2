@@ -5,7 +5,7 @@ The task is split into three sub-categories and shouldn't take longer than 2-4 h
 
 ### Restrictions and Requirements
 1. This challenge requires Docker to be installed on your system. The easiest way to accomplish this is to [install Docker Desktop](https://www.docker.com/).
-2. You should focus on code quality and structure. If possible, timely and reasonable, also add tests.
+2. You should focus on code quality and structure. If possible, timely, and reasonable, also add tests.
 3. Wherever possible, try to follow the [SOLID principles](https://en.wikipedia.org/wiki/SOLID).
 
 ### Setup
