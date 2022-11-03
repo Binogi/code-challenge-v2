@@ -5,17 +5,17 @@ The task is split into three sub-categories and shouldn't take longer than 2-4 h
 
 ### Restrictions and Requirements
 1. This challenge requires Docker to be installed on your system. The easiest way to accomplish this is to [install Docker Desktop](https://www.docker.com/).
-2. You should focus on code quality and structure. If possible and timely reasonable, also add tests.
-3. Wherever possible and reasonable, try to follow the [SOLID principles](https://en.wikipedia.org/wiki/SOLID).
+2. You should focus on code quality and structure. If possible, timely and reasonable, also add tests.
+3. Wherever possible, try to follow the [SOLID principles](https://en.wikipedia.org/wiki/SOLID).
 
 ### Setup
-This repository has been set up for you to start right away. We are using [Laravel Sail](https://laravel.com/docs/9.x/sail) to ensure that
+This repository has been set up for you to start right away. We are using Docker to ensure that
 this code challenge can be run locally on your machine, regardless of your installed system environment.
-- The project can be brought up and running by running the following commands from the root directory of the project: 
-  - `composer install`
-  - `./vendor/bin/sail up`
-  - `./vendor/bin/sail artisan migrate:fresh --seed`
-  - `./vendor/bin/sail artisan l5-swagger:generate`
+- The project can be brought up by running the following commands from the root directory of the project:
+  - `docker-compose up --remove-orphans`
+  - `docker-compose run --rm php composer install`
+  - `docker-compose run --rm php /var/www/artisan migrate:fresh --seed`
+  - `docker-compose run --rm php /var/www/artisan l5-swagger:generate`
 
 ### The Challenge
 You have been given access to a list of users. 
@@ -30,8 +30,8 @@ The assignment is to add a column named `nickname` (via a migration) to the data
 
 ### Hints
 - The OpenAPI Swagger documentation can be generated on demand by running `./vendor/bin/sail artisan l5-swagger:generate` in the root directory of the project
-  - This documentation can be viewed by navigating to [http://localhost/api/documentation](http://localhost/api/documentation)
+  - This documentation can be viewed by navigating to [http://localhost:7777/api/documentation](http://localhost:7777/api/documentation)
 - Don't worry about authentication
 - Tests can be run by running the following commands:
-  - `docker exec -it code-challenge-laravel.test-1 bash` (connecting to the Docker container)
-  - `./vendor/bin/phpunit` (run the tests)
+  - `docker exec -it mysql bash -c "mysql -u root -ppassword -e \"DROP DATABASE IF EXISTS testing; CREATE DATABASE testing\""`Creates the test DB
+  - `docker-compose run --rm php php /var/www/artisan test` (run the tests)
