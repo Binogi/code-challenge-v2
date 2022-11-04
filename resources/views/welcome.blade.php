@@ -33,7 +33,7 @@
                             <div class="ml-4">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                     <p>This code test involves performing work on an existing Laravel project. <br />
-                                        The task is split into three sub-categories and shouldn't take longer than 2-4 hours of your time.</p>
+                                        The task is split into several sub-categories and shouldn't take longer than 2-4 hours of your time.</p>
                                     <div class="info-block">
                                         <h3>Restrictions and Requirements</h3>
                                         <ol>
@@ -63,34 +63,43 @@
                                         <p>You have been given access to a list of users.
                                             The assignment is to add a column named <code>nickname</code> (via a migration) to the database as well as updating the related endpoints.</p>
                                         <ol>
-                                            <li>The GET request needs to include the new column</li>
+                                            <li>The GET request needs to include the new column.</li>
                                             <li>The POST request and the PUT request need to be able to change the value of the column asserting the following validation rules:
                                                 <ul>
-                                                    <li>A valid nickname must be unique among users</li>
-                                                    <li>A valid nickname must be a string shorter than 30 characters</li>
+                                                    <li>A valid nickname must be unique among users.</li>
+                                                    <li>A valid nickname must be a string shorter than 30 characters.</li>
                                                 </ul>
                                             </li>
-                                            <li>Documentation should be updated so Swagger can be generated and used to smoke test
+                                            <li>Documentation should be updated so Swagger can be generated and used to smoke test.
                                                 <ul>
-                                                    <li>We are using the open-source package <a target="_blank" href="https://github.com/DarkaOnLine/L5-Swagger">L5-Swagger</a> to generate OpenAPI Swagger</li>
+                                                    <li>We are using the open-source package <a target="_blank" href="https://github.com/DarkaOnLine/L5-Swagger">L5-Swagger</a> to generate OpenAPI Swagger.</li>
                                                 </ul>
                                             </li>
                                         </ol>
                                     </div>
 
                                     <div class="info-block">
+                                        <h3>Submitting Your Work</h3>
+                                        <ol>
+                                            <li>When you are ready to submit your work: do not open a PR.</li>
+                                            <li>Instead, push your changes to a public repository on GitHub and email a link to <a href="mailto:cto@binogi.com">cto@binogi.com</a>.</li>
+                                            <li>In the email please specify your name in the subject field.</li>
+                                        </ol>
+                                    </div>
+
+                                    <div class="info-block">
                                         <h3>Hints</h3>
                                         <ul>
-                                            <li>The OpenAPI Swagger documentation can be generated on demand by running <code>docker-compose run --rm php /var/www/artisan l5-swagger:generate</code> in the root directory of the project
+                                            <li>The OpenAPI Swagger documentation can be generated on demand by running <code>docker-compose run --rm php /var/www/artisan l5-swagger:generate</code> in the root directory of the project.
                                                 <ul>
-                                                    <li>This documentation can be viewed by navigating to <a target="_blank" href="http://localhost:7777/api/documentation">http://localhost:7777/api/documentation</a></li>
+                                                    <li>This documentation can be viewed by navigating to <a target="_blank" href="http://localhost:7777/api/documentation">http://localhost:7777/api/documentation</a>.</li>
                                                 </ul>
                                             </li>
-                                            <li>Don't worry about authentication</li>
-                                            <li>Tests can be run by running the following commands:
+                                            <li>Don't worry about authentication.</li>
+                                            <li>Tests can be run by executing the following commands:
                                                 <ul>
-                                                    <li><code>docker exec -it mysql bash -c "mysql -u root -ppassword -e \"DROP DATABASE IF EXISTS testing; CREATE DATABASE testing\""</code> Creates the test DB </li>
-                                                    <li><code>docker-compose run --rm php php /var/www/artisan test</code> (run the tests)</li>
+                                                    <li><code>docker exec -it mysql bash -c "mysql -u root -ppassword -e \"DROP DATABASE IF EXISTS testing; CREATE DATABASE testing\""</code> (creates the test DB)</li>
+                                                    <li><code>docker-compose run --rm php php /var/www/artisan test</code> (runs the tests)</li>
                                                 </ul>
                                             </li>
                                         </ul>
