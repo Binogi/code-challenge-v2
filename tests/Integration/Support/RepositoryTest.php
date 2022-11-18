@@ -34,6 +34,10 @@ class RepositoryTest extends FrameworkTest
         $this->assertInstanceOf(User::class, $user);
         $this->repository->update(['name' => 'Luke Skywalker'], $user->id);
         $this->assertEquals('Luke Skywalker', $user->refresh()->name);
+
+        $nickname = 'Darth Vader';
+        $this->repository->update(['nickname' => $nickname], $user->id);
+        $this->assertEquals($nickname, $user->refresh()->nickname);
     }
 
     public function testDelete()
